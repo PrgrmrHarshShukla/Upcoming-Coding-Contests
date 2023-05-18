@@ -1,0 +1,37 @@
+.extra {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   overflow-x: hidden;
+   background-color: rgb(27, 26, 26);
+}
+
+body {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   overflow-x: hidden;
+   background-color: rgb(27, 26, 26);   
+}
+
+#portfolio {
+   height: 5vh;
+   font-size: 5vh;
+   margin-bottom: 2vh;
+}
+
+#portfolioLink {
+   text-decoration: none;   
+   color: rgb(70, 224, 28);
+   font-weight: 800;
+}
+
+#info {
+   color: aliceblue;
+}

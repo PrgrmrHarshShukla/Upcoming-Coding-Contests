@@ -51,18 +51,19 @@ const f2 = async () => {
       el.style.width = "maxcontent"
       el.style.minWidth = "300px"
       el.style.maxWidth = "500px"
-      el.style.minHeight = "420px"
+      el.style.minHeight = "350px"
       el.style.maxHeight = "500px"
-      el.style.padding = "5vw"
+      el.style.padding = "2px"
       el.style.margin = "10px"
       el.style.color = "white"
+      el.style.background = "linear-gradient(white, rgb(84, 106, 180))"
 
       
      
       // console.log(starting_date);
       // console.log(starting_time);
 
-      el.insertAdjacentHTML('afterbegin', `<h1 id=${"name" + index}>${a[index].name}</h1>`)
+      el.insertAdjacentHTML('afterbegin', `<h2 id=${"name" + index}>${a[index].name}</h2>`)
 
       let elName = document.getElementById(`${"name" + index}`)
 

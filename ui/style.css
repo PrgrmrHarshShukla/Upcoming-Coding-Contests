@@ -11,7 +11,7 @@
 
 body {
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
    flex-wrap: wrap;
    justify-content: center;
    align-items: center;
@@ -20,18 +20,29 @@ body {
    background-color: rgb(27, 26, 26);   
 }
 
-#portfolio {
-   height: 5vh;
-   font-size: 5vh;
-   margin-bottom: 2vh;
-}
-
-#portfolioLink {
-   text-decoration: none;   
-   color: rgb(70, 224, 28);
-   font-weight: 800;
+#intro {
+   color: rgb(24, 26, 141);
+   background-color: rgb(219, 229, 229);
+   margin-bottom: 5vw;
+   width: 45vw;
+   font-size: 25px;
+   padding: 10px;
+   border-radius: 20px;
 }
 
 #info {
-   color: aliceblue;
+   color: rgb(85, 76, 219);
+   font-size: 15px;
+}
+
+#portfolio {
+   margin-top: 5vh;
+   height: 5vh;
+   font-size: 3vh;
+   margin-bottom: 1vh;
+}
+
+#portfolioLink {
+   color: rgb(59, 177, 201);
+   font-weight: 800;
 }

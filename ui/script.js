@@ -9,7 +9,7 @@ let date = new Date().getDate()
 // let date = 8
 let zero = 0
 
-realDate = date>10 ? date : (zero + date)
+realDate = `date>10 ? date : (zero + date)`
 // realDate = Number.parseInt(realDate)
 
 let month = new Date().getMonth()
@@ -25,9 +25,10 @@ const f2 = async () => {
       // console.log(a[index].name);
       // console.log(a[index].url);
       let starting_date = a[index].start_time.slice(0, 10)
+      // console.log(starting_date);
       let starting_time = a[index].start_time.slice(11, 16)
 
-      if( starting_date < `${year}-0${month}-${realDate}` ){
+      if( starting_date < `${year}-0${month}-20` ){
          continue;
       }
 
@@ -55,8 +56,8 @@ const f2 = async () => {
       el.style.maxHeight = "500px"
       el.style.padding = "2px"
       el.style.margin = "10px"
-      el.style.color = "white"
-      el.style.background = "linear-gradient(white, rgb(84, 106, 180))"
+      el.style.color = "black"
+      el.style.background = "rgb(141, 200, 230)"
 
       
      
@@ -69,28 +70,39 @@ const f2 = async () => {
 
       elName.style.textAlign = "center"
       elName.style.maxWidth = "300px"
-      elName.style.color = "rgb(75, 91, 200)"
+      elName.style.fontWeight = "900"
+      elName.style.color = "rgb(0, 3, 104)"
 
 
       el.insertAdjacentHTML('beforeend', `<h4 id=${"start_time_" + index}>Date: ${starting_date}</h4>`)
-      el.insertAdjacentHTML('beforeend', `<h4 id=${"starting_time" + index}>Starting Time: ${starting_time}</h4>`)
-      let elTime = document.getElementById(`${"starting_time" + index}`)
-
-      elTime.style.margin = "-10px"
-
-      el.insertAdjacentHTML('beforeend', `<h4 id=${"site" + index}>Site: ${a[index].site}</h4>`)
+      let elDate = document.getElementById(`${"start_time_" + index}`)
+      elDate.style.textAlign = "left"
+      elDate.style.minWidth = "150px"
 
       
+      el.insertAdjacentHTML('beforeend', `<h4 id=${"starting_time" + index}>Starting Time: ${starting_time}</h4>`)
+      let elTime = document.getElementById(`${"starting_time" + index}`)
+      
+      elTime.style.margin = "-10px"
+      elTime.style.textAlign = "left"
+      elTime.style.minWidth = "150px"
+      
+      el.insertAdjacentHTML('beforeend', `<h4 id=${"site" + index}>Site:  <a href=${a[index].url} target="_blank">${a[index].site}</a></h4>`)
+      let elSite = document.getElementById(`${"site" + index}`)
+      elSite.style.textAlign = "left"
+      elSite.style.minWidth = "150px"
+      
+      
 
-      el.insertAdjacentHTML('beforeend', `<a id=${"link" + index} target="_blank" href=${a[index].url}>Contest Link</a>`)
+      // el.insertAdjacentHTML('beforeend', `<a id=${"link" + index} target="_blank" href=${a[index].url}>Contest Link</a>`)
 
-      let elLink = document.getElementById(`${"link" + index}`)
-      elLink.style.color = "orange"
-      elLink.style.fontSize = "20px"
+      // let elLink = document.getElementById(`${"link" + index}`)
+      // elLink.style.color = "rgb(0, 7, 104)"
+      // elLink.style.fontSize = "20px"
+      // elLink.style.fontWeight = "500"
+      // elLink.style.marginLeft = "-50px"
    }
-   let el1 = document.createElement("a")
-   el1.href = "https://harsh-shukla-portfolio-website.netlify.app/"
-   el1.target = "_blank"
+
 
    document.body.appendChild(el1)
 }

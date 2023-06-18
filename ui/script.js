@@ -5,32 +5,30 @@ const f1 = async () => {
    return response
 }
 
-let date = new Date().getDate()
-// let date = 8
-let zero = 0
-
-realDate = `date>10 ? date : (zero + date)`
-// realDate = Number.parseInt(realDate)
-
-let month = new Date().getMonth()
-let year = new Date().getFullYear()
-// console.log(date, month, year, realDate);
-// console.log(`${year}-0${month}-${realDate}`);
-
 const f2 = async () => {
    let a = await f1()
    // console.log(a);
 
-   for(let index in a){
-      // console.log(a[index].name);
-      // console.log(a[index].url);
+   for(let index = 0; index < a.length; index++){
       let starting_date = a[index].start_time.slice(0, 10)
-      // console.log(starting_date);
       let starting_time = a[index].start_time.slice(11, 16)
 
-      if( starting_date < `${year}-0${month}-20` ){
+      let ConditionArr = starting_date.split(/-/)
+      
+      ConditionArr[0] = Number.parseInt(ConditionArr[0])
+      ConditionArr[1] = Number.parseInt(ConditionArr[1])
+      ConditionArr[2] = Number.parseInt(ConditionArr[2])
+
+      if( ConditionArr[0] < new Date().getFullYear() ){
          continue;
       }
+      if( ConditionArr[1] < new Date().getMonth() + 1 ){
+         continue;
+      }
+      if( ConditionArr[2] < new Date().getDate() ){
+         continue;
+      }
+
 
       let extra = document.getElementById("extra")
     
@@ -59,10 +57,6 @@ const f2 = async () => {
       el.style.color = "black"
       el.style.background = "rgb(141, 200, 230)"
 
-      
-     
-      // console.log(starting_date);
-      // console.log(starting_time);
 
       el.insertAdjacentHTML('afterbegin', `<h2 id=${"name" + index}>${a[index].name}</h2>`)
 
@@ -92,19 +86,7 @@ const f2 = async () => {
       elSite.style.textAlign = "left"
       elSite.style.minWidth = "150px"
       
-      
-
-      // el.insertAdjacentHTML('beforeend', `<a id=${"link" + index} target="_blank" href=${a[index].url}>Contest Link</a>`)
-
-      // let elLink = document.getElementById(`${"link" + index}`)
-      // elLink.style.color = "rgb(0, 7, 104)"
-      // elLink.style.fontSize = "20px"
-      // elLink.style.fontWeight = "500"
-      // elLink.style.marginLeft = "-50px"
    }
-
-
-   document.body.appendChild(el1)
 }
 
 f2()
